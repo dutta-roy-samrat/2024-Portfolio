@@ -1,95 +1,46 @@
+import SocialMediaLinks from "@components/social-media-links";
+import { CURRENT_DESIGNATION, PORTFOLIO_OWNER } from "@constants";
+import { PROJECTS_LINK_DETAILS, RESUME_LINK_DETAILS } from "@routes";
 import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import ProfileImg from "@assets/images/profile-img.png";
 
-export default function Home() {
+const HOME_PAGE = () => {
+  const renderButtonLinks = () =>
+    [RESUME_LINK_DETAILS, PROJECTS_LINK_DETAILS].map(({ route, text }) => (
+      <Link key={route} href={route}>
+        {text}
+      </Link>
+    ));
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
+    <div>
+      <div>
+        <Image src={ProfileImg} alt="" />
+        <div>{PORTFOLIO_OWNER}</div>
+        <hr />
+        <div>{CURRENT_DESIGNATION}</div>
         <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+          <SocialMediaLinks />
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div>
+        <div>Hello</div>
+        <div>Here's who I am AND what I do</div>
+        <div>{renderButtonLinks()}</div>
+        <p>
+          I am a dedicated web development enthusiast actively honing my
+          frontend skills. I specialize in React, JavaScript, Next.js, and
+          various other essential frontend tools, continually striving to expand
+          my knowledge and expertise.
+        </p>
+        <p>
+          Originally a Mechanical Engineer, I've transitioned into a passionate
+          front-end web developer, dedicated to crafting efficient and engaging
+          user interfaces.
+        </p>
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
-}
+};
+
+export default HOME_PAGE;
