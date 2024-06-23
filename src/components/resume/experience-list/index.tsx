@@ -1,4 +1,4 @@
-import { EXPERIENCE_DETAILS } from "@constants";
+import { EXPERIENCE_DETAILS } from "@components/resume/experience-list/constants";
 import { Fragment, ReactNode } from "react";
 import Card from "@ui/cards";
 import ExternalLink from "@ui/external-link";
@@ -8,7 +8,7 @@ type AchievementProps = {
   description: string;
 };
 
-const ExperienceDetails = () => {
+const ExperienceList = () => {
   const renderAchievements = (achievements: AchievementProps[]): ReactNode =>
     achievements.map(({ title, description }) => (
       <Fragment key={title}>
@@ -66,4 +66,4 @@ const ExperienceDetails = () => {
   return renderExperienceCards();
 };
 
-export default ExperienceDetails;
+export default ExperienceList;
