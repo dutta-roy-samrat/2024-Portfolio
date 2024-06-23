@@ -1,7 +1,7 @@
-import { EDUCATION_DETAILS } from "@constants";
+import { EDUCATION_DETAILS } from "@components/resume/education-list/constants";
 import Card from "@ui/cards";
 
-const EducationDetails = () =>
+const EducationList = () =>
   EDUCATION_DETAILS.map(
     ({ dateRange, instituteName, course, location, score }) => (
       <Card key={course}>
@@ -13,4 +13,4 @@ const EducationDetails = () =>
     )
   );
 
-export default EducationDetails;
+export default EducationList;

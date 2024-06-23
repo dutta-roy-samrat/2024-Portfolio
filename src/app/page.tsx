@@ -1,17 +1,19 @@
 import SocialMediaLinks from "@components/social-media-links";
 import { CURRENT_DESIGNATION, PORTFOLIO_OWNER } from "@constants";
-import { PROJECTS_LINK_DETAILS, RESUME_LINK_DETAILS } from "@routes";
+import { PERSONAL_PROJECT_LINK_DETAILS, RESUME_LINK_DETAILS } from "@routes";
 import Image from "next/image";
 import Link from "next/link";
 import ProfileImg from "@assets/images/profile-img.png";
 
-const HOME_PAGE = () => {
+const HomePage = () => {
   const renderButtonLinks = () =>
-    [RESUME_LINK_DETAILS, PROJECTS_LINK_DETAILS].map(({ route, text }) => (
-      <Link key={route} href={route}>
-        {text}
-      </Link>
-    ));
+    [RESUME_LINK_DETAILS, PERSONAL_PROJECT_LINK_DETAILS].map(
+      ({ route, text }) => (
+        <Link key={route} href={route}>
+          {text}
+        </Link>
+      )
+    );
   return (
     <div>
       <div>
@@ -43,4 +45,4 @@ const HOME_PAGE = () => {
   );
 };
 
-export default HOME_PAGE;
+export default HomePage;
