@@ -6,6 +6,7 @@ import {
   SOCIAL_MEDIA_DETAILS,
 } from "@constants";
 import SocialMediaLinks from "@components/social-media-links";
+import ExternalLink from "@ui/external-link";
 
 const Footer = () => (
   <div>
@@ -19,7 +20,12 @@ const Footer = () => (
       </div>
       <div>
         <div>{EMAIL_DETAILS.label}</div>
-        <a href={getMailRoute(EMAIL_DETAILS.value)}>{EMAIL_DETAILS.value}</a>
+        <ExternalLink
+          href={getMailRoute(EMAIL_DETAILS.value)}
+          showExternalLinkIcon={false}
+        >
+          {EMAIL_DETAILS.value}
+        </ExternalLink>
       </div>
       <div>
         <div>{SOCIAL_MEDIA_DETAILS.label}</div>

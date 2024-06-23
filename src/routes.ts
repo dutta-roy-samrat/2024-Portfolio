@@ -5,7 +5,7 @@ export const RESUME_LINK_DETAILS = {
   route: "/resume",
 };
 export const PROJECTS_LINK_DETAILS = { text: "Projects", route: "/projects" };
-export const CONTACT_LINK_DETAILS = { text: "Contact", route: "/contacts" };
+export const CONTACT_LINK_DETAILS = { text: "Contact", route: "/contact" };
 
 export const HEADER_NAV_LINKS = [
   ABOUT_ME_LINK_DETAILS,
@@ -13,3 +13,5 @@ export const HEADER_NAV_LINKS = [
   PROJECTS_LINK_DETAILS,
   CONTACT_LINK_DETAILS,
 ];
+
+export const RESUME_PDF_URL = "/resume.pdf";
