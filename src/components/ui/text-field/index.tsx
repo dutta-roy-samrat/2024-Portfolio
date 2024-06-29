@@ -1,6 +1,6 @@
 import { FC, InputHTMLAttributes } from "react";
 
-import ErrorMessage from "@shared/error-message";
+import ErrorMessage from "@components/shared/error-message";
 
 import defaultStyles from "./main.module.scss";
 

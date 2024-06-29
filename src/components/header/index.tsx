@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import BulletPoint from "@ui/bullet-point";
+import BulletPoint from "@components/ui/bullet-point";
 
 import { CURRENT_DESIGNATION, PORTFOLIO_OWNER } from "@constants";
 import { HEADER_NAV_LINKS } from "@routes";

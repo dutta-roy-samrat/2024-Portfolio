@@ -1,4 +1,4 @@
-import Card from "@ui/cards";
+import Card from "@components/ui/cards";
 
 import { EDUCATION_DETAILS } from "./constants";
 

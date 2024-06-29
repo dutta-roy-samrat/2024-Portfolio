@@ -1,7 +1,7 @@
 import { Fragment, ReactNode } from "react";
 
-import Card from "@ui/cards";
-import ExternalLink from "@ui/external-link";
+import Card from "@components/ui/cards";
+import ExternalLink from "@components/ui/external-link";
 
 import { EXPERIENCE_DETAILS } from "./constants";
 

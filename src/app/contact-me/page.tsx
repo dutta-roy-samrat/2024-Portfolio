@@ -1,5 +1,5 @@
 import ContactMeForm from "@components/contact-me-form";
-import BulletPoint from "@ui/bullet-point";
+import BulletPoint from "@components/ui/bullet-point";
 
 const ContactMePage = () => {
   return <div>

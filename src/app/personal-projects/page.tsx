@@ -1,5 +1,5 @@
 import PersonalProjectList from "@components/personal-projects";
-import BulletPoint from "@ui/bullet-point";
+import BulletPoint from "@components/ui/bullet-point";
 
 import { PERSONAL_PROJECT_LINK_DETAILS } from "@routes";
 

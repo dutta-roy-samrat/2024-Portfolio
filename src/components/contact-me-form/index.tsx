@@ -2,8 +2,8 @@
 
 import { ChangeEventHandler, MouseEventHandler, useState } from "react";
 
-import Button from "@ui/button";
-import TextField from "@ui/text-field";
+import Button from "@components/ui/button";
+import TextField from "@components/ui/text-field";
 
 import { isValidEmail } from "@helpers/routes";
 import { getFormFieldsInOrder } from "./helpers";

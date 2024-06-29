@@ -2,9 +2,9 @@ import EducationList from "@components/resume/education-list";
 import ExperienceList from "@components/resume/experience-list";
 import LanguageProficiencyList from "@components/resume/langugage-proficiency-list";
 import ProfessionalSkillSetList from "@components/resume/professional-skillset-list";
-import BulletPoint from "@ui/bullet-point";
-import Button from "@ui/button";
-import ExternalLink from "@ui/external-link";
+import BulletPoint from "@components/ui/bullet-point";
+import Button from "@components/ui/button";
+import ExternalLink from "@components/ui/external-link";
 
 import { RESUME_LINK_DETAILS, RESUME_PDF_URL } from "@routes";
 

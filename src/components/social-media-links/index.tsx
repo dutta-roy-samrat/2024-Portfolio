@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import ExternalLink from "@ui/external-link";
+import ExternalLink from "@components/ui/external-link";
 
 import { SOCIAL_MEDIA_DETAILS } from "@constants";
 

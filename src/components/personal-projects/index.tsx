@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import Card from "@ui/cards";
-import ExternalLink from "@ui/external-link";
+import Card from "@components/ui/cards";
+import ExternalLink from "@components/ui/external-link";
 
 import { PERSONAL_PROJECTS } from "./constants";
 

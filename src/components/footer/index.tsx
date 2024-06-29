@@ -1,5 +1,5 @@
 import SocialMediaLinks from "@components/social-media-links";
-import ExternalLink from "@ui/external-link";
+import ExternalLink from "@components/ui/external-link";
 
 import { getMailRoute } from "@helpers/routes";
 
