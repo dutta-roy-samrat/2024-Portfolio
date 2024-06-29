@@ -1,6 +1,7 @@
+import { MY_GITHUB_URL } from "@constants";
+
 import MovieSearchAppImg from "@assets/images/movie-search-app.png";
 import QuizzicalAppImg from "@assets/images/quizzical.png";
-import { MY_GITHUB_URL } from "@constants";
 
 export const PERSONAL_PROJECTS = [
   {

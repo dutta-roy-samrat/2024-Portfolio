@@ -1,7 +1,9 @@
-import { EXPERIENCE_DETAILS } from "@components/resume/experience-list/constants";
 import { Fragment, ReactNode } from "react";
+
 import Card from "@ui/cards";
 import ExternalLink from "@ui/external-link";
+
+import { EXPERIENCE_DETAILS } from "./constants";
 
 type AchievementProps = {
   title: string;

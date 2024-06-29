@@ -1,7 +1,8 @@
-import { FC, ReactNode } from "react";
+import { ButtonHTMLAttributes, FC, ReactNode } from "react";
+
 import defaultStyles from "./main.module.scss";
 
-type ButtonProps = {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   styles?: ModularStyles;
   children: ReactNode;
 };

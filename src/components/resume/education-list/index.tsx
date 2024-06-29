@@ -1,5 +1,6 @@
-import { EDUCATION_DETAILS } from "@components/resume/education-list/constants";
 import Card from "@ui/cards";
+
+import { EDUCATION_DETAILS } from "./constants";
 
 const EducationList = () =>
   EDUCATION_DETAILS.map(

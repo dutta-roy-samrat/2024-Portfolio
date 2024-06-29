@@ -1,5 +1,6 @@
-import { LANGUAGE_FLUENCY_LIST } from "@components/resume/langugage-proficiency-list/constants";
 import Card from "@ui/cards";
+
+import { LANGUAGE_FLUENCY_LIST } from "./constants";
 
 const LanguageProficiencyList = () => (
   <Card>

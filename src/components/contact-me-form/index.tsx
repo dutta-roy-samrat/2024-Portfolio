@@ -1,16 +1,21 @@
-import { DEFAULT_CONTACT_FORM_VALUES } from "@components/contact-me-form/constants";
-import { isValidEmail } from "@helpers/routes";
+"use client";
+
+import { ChangeEventHandler, MouseEventHandler, useState } from "react";
+
 import Button from "@ui/button";
 import TextField from "@ui/text-field";
-import { useState } from "react";
+
+import { isValidEmail } from "@helpers/routes";
 import { getFormFieldsInOrder } from "./helpers";
+
+import { DEFAULT_CONTACT_FORM_VALUES } from "./constants";
 
 const ContactMeForm = () => {
   const [formValues, setFormValues] = useState(DEFAULT_CONTACT_FORM_VALUES);
 
   const { firstName, lastName, email, subject, message } = formValues;
 
-  const handleFieldChange = (e) => {
+  const handleFieldChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     const { value, name } = e.target;
 
     setFormValues((prevFormValues) => ({
@@ -19,18 +24,18 @@ const ContactMeForm = () => {
     }));
   };
 
-  const handleFieldError = ({ name, errorMsg }) => {
+  const handleFieldError = ({ name, errorMsg }: { name: string; errorMsg: string }) => {
     setFormValues((prevFormValues) => ({
       ...prevFormValues,
       [name]: { ...prevFormValues[name], errorMsg },
     }));
   };
 
-  const validateAndSubmit = (e) => {
+  const validateAndSubmit: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault();
     const errorFields = getFormFieldsInOrder(formValues).filter((field) => {
       const { required, emailValidation, value, name, labelText } = field;
-      if (required && !value) {
+      if (required && !value.trim()) {
         handleFieldError({
           name,
           errorMsg: `${labelText} is required.`,
@@ -49,12 +54,12 @@ const ContactMeForm = () => {
       const firstErrorFieldLabelElement = document.getElementById(
         `${errorFields[0].id}-label`
       );
-      return firstErrorFieldLabelElement.scrollIntoView({
+      return firstErrorFieldLabelElement?.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
     }
-    console.log("xyz");
+    //add email using sendemail
   };
 
   return (

@@ -1,7 +1,9 @@
-import Image from "next/image";
-import ExternalLinkIcon from "@assets/images/external-link-icon.svg";
-import defaultStyles from "./main.module.scss";
 import { FC, ReactNode } from "react";
+import Image from "next/image";
+
+import ExternalLinkIcon from "@assets/images/external-link-icon.svg";
+
+import defaultStyles from "./main.module.scss";
 
 interface ExternalLinkProps {
   styles?: ModularStyles;

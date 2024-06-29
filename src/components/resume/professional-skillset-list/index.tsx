@@ -1,5 +1,6 @@
-import { PROFESSIONAL_SKILLS } from "@components/resume/professional-skillset-list/constants";
 import Card from "@ui/cards";
+
+import { PROFESSIONAL_SKILLS } from "./constants";
 
 const ProfessionalSkillSetList = () => (
   <Card>

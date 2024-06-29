@@ -1,6 +1,23 @@
-const REQUIRED_FIELD = Object.freeze({ required: true });
+interface RequiredFieldType {
+  required: true
+}
 
-export const DEFAULT_CONTACT_FORM_VALUES = Object.freeze({
+const REQUIRED_FIELD: RequiredFieldType = Object.freeze({ required: true });
+
+export interface DefaultContactFieldType extends RequiredFieldType {
+  id: string;
+  name: string;
+  value: string;
+  errorMsg: string
+  labelText: string;
+  emailValidation?: boolean;
+}
+
+export type DefaultContactFormValueType = {
+  [name: string]: DefaultContactFieldType;
+}
+
+export const DEFAULT_CONTACT_FORM_VALUES: DefaultContactFormValueType = Object.freeze({
   firstName: {
     id: "firstName",
     name: "firstName",
