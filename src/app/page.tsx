@@ -1,8 +1,11 @@
-import SocialMediaLinks from "@components/social-media-links";
-import { CURRENT_DESIGNATION, PORTFOLIO_OWNER } from "@constants";
-import { PERSONAL_PROJECT_LINK_DETAILS, RESUME_LINK_DETAILS } from "@routes";
 import Image from "next/image";
 import Link from "next/link";
+
+import SocialMediaLinks from "@components/social-media-links";
+
+import { CURRENT_DESIGNATION, PORTFOLIO_OWNER } from "@constants";
+import { PERSONAL_PROJECT_LINK_DETAILS, RESUME_LINK_DETAILS } from "@routes";
+
 import ProfileImg from "@assets/images/profile-img.png";
 
 const HomePage = () => {

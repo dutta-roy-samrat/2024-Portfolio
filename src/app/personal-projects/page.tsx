@@ -1,13 +1,13 @@
-import { PERSONAL_PROJECT_LINK_DETAILS } from "@routes";
 import PersonalProjectList from "@components/personal-projects";
+import BulletPoint from "@components/ui/bullet-point";
+
+import { PERSONAL_PROJECT_LINK_DETAILS } from "@routes";
+
 const PersonalProjectsPage = () => (
   <div>
-    <div>
-      <div></div>
-      <div>{PERSONAL_PROJECT_LINK_DETAILS.text}</div>
-    </div>
+    <BulletPoint>{PERSONAL_PROJECT_LINK_DETAILS.text}</BulletPoint>
     <PersonalProjectList />
-  </div>
+  </div >
 );
 
 export default PersonalProjectsPage;

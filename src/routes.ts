@@ -7,7 +7,10 @@ export const PERSONAL_PROJECT_LINK_DETAILS = {
   text: "Personal Projects",
   route: "/personal-projects",
 };
-export const CONTACT_LINK_DETAILS = { text: "Contact", route: "/contact" };
+export const CONTACT_LINK_DETAILS = {
+  text: "Contact Me",
+  route: "/contact-me",
+};
 
 export const HEADER_NAV_LINKS = [
   ABOUT_ME_LINK_DETAILS,

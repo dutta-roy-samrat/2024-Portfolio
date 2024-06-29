@@ -1,7 +1,9 @@
-import Card from "@ui/cards";
-import { PERSONAL_PROJECTS } from "./constants";
 import Image from "next/image";
-import ExternalLink from "@ui/external-link";
+
+import Card from "@components/ui/cards";
+import ExternalLink from "@components/ui/external-link";
+
+import { PERSONAL_PROJECTS } from "./constants";
 
 const PersonalProjectList = () =>
   PERSONAL_PROJECTS.map(({ title, description, src, link, role }) => (
