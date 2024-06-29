@@ -8,6 +8,8 @@ import { PERSONAL_PROJECT_LINK_DETAILS, RESUME_LINK_DETAILS } from "@routes";
 
 import ProfileImg from "@assets/images/profile-img.png";
 
+import styles from "./main.module.scss";
+
 const HomePage = () => {
   const renderButtonLinks = () =>
     [RESUME_LINK_DETAILS, PERSONAL_PROJECT_LINK_DETAILS].map(
@@ -18,7 +20,7 @@ const HomePage = () => {
       )
     );
   return (
-    <div>
+    <div className={styles.homePage}>
       <div>
         <Image src={ProfileImg} alt="" />
         <div>{PORTFOLIO_OWNER}</div>

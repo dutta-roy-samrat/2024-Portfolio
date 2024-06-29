@@ -24,7 +24,13 @@ const ContactMeForm = () => {
     }));
   };
 
-  const handleFieldError = ({ name, errorMsg }: { name: string; errorMsg: string }) => {
+  const handleFieldError = ({
+    name,
+    errorMsg,
+  }: {
+    name: string;
+    errorMsg: string;
+  }) => {
     setFormValues((prevFormValues) => ({
       ...prevFormValues,
       [name]: { ...prevFormValues[name], errorMsg },
@@ -34,7 +40,7 @@ const ContactMeForm = () => {
   const validateAndSubmit: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault();
     const errorFields = getFormFieldsInOrder(formValues).filter((field) => {
-      const { required, emailValidation, value, name, labelText } = field;
+      const { required, value, name, labelText } = field;
       if (required && !value.trim()) {
         handleFieldError({
           name,
@@ -42,7 +48,7 @@ const ContactMeForm = () => {
         });
         return true;
       }
-      if (emailValidation && !isValidEmail(value)) {
+      if (name === email.name && !isValidEmail(value)) {
         handleFieldError({
           name,
           errorMsg: `${labelText} is not valid.`,

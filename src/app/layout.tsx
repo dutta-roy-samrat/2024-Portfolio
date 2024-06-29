@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 
 import Header from "@components/header";
 import Footer from "@components/footer";
+import CurrentDeviceContextProvider from "@contexts/current-device-context";
+
+import styles from "./global.module.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
+      <body className={`${inter.className} ${styles.bodyClass}`}>
+        <CurrentDeviceContextProvider breakPoints={{ lg: 1024 }}>
+          <Header />
+          {children}
+          <Footer />
+        </CurrentDeviceContextProvider>
       </body>
     </html>
   );

@@ -19,3 +19,5 @@ export const SOCIAL_MEDIA_DETAILS = {
 };
 
 export const MY_GITHUB_URL = "https://dutta-roy-samrat.github.io";
+
+export const DEFAULT_BREAKPOINTS = { lg: 991, md: 767 };
