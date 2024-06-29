@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Nunito } from "next/font/google";
 
 import Header from "@components/header";
 import Footer from "@components/footer";
@@ -7,7 +7,10 @@ import CurrentDeviceContextProvider from "@contexts/current-device-context";
 
 import styles from "./global.module.scss";
 
-const inter = Inter({ subsets: ["latin"] });
+const nunito = Nunito({
+  subsets: ["latin"],
+  weight: "600",
+});
 
 export const metadata: Metadata = {
   title: "Samrat's Portfolio",
@@ -22,8 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${styles.bodyClass}`}>
-        <CurrentDeviceContextProvider breakPoints={{ lg: 1024 }}>
+      <body className={`${nunito.className} ${styles.bodyClass}`}>
+        <CurrentDeviceContextProvider>
           <Header />
           {children}
           <Footer />

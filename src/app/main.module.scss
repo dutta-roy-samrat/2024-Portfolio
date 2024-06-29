@@ -1,5 +1,40 @@
+@use "../components/ui/cards/main.module.scss" as *;
+
 .homePage {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 160px 190px;
+  background-image: linear-gradient(
+    to right,
+    rgb(230, 218, 206) 0%,
+    rgb(230, 218, 206) 490px,
+    white 490px,
+    white 100%
+  );
+}
+
+.profileImg {
+  height: 120px;
+  width: 120px;
+  @media (min-width: 1176px) {
+    height: 205px;
+    width: 205px;
+  }
+}
+
+.portfolioOwnerName {
+  font-size: 25px;
+  width: 171px;
+  text-align: center;
+}
+
+.cardStyle {
+  min-height: 525px;
+  min-width: 353px;
+  background: rgb(230, 218, 206);
+}
+
+.introtext {
+  padding-left: 100px;
 }

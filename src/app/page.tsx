@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Poppins } from "next/font/google";
 
 import SocialMediaLinks from "@components/social-media-links";
+import Card from "@components/ui/cards";
 
 import { CURRENT_DESIGNATION, PORTFOLIO_OWNER } from "@constants";
 import { PERSONAL_PROJECT_LINK_DETAILS, RESUME_LINK_DETAILS } from "@routes";
@@ -9,6 +11,11 @@ import { PERSONAL_PROJECT_LINK_DETAILS, RESUME_LINK_DETAILS } from "@routes";
 import ProfileImg from "@assets/images/profile-img.png";
 
 import styles from "./main.module.scss";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: "600",
+});
 
 const HomePage = () => {
   const renderButtonLinks = () =>
@@ -21,16 +28,22 @@ const HomePage = () => {
     );
   return (
     <div className={styles.homePage}>
-      <div>
-        <Image src={ProfileImg} alt="" />
-        <div>{PORTFOLIO_OWNER}</div>
+      <Card styles={styles}>
+        <Image
+          src={ProfileImg}
+          alt={PORTFOLIO_OWNER}
+          className={styles.profileImg}
+        />
+        <div className={`${styles.portfolioOwnerName} ${poppins.className}`}>
+          {PORTFOLIO_OWNER}
+        </div>
         <hr />
         <div>{CURRENT_DESIGNATION}</div>
         <div>
           <SocialMediaLinks />
         </div>
-      </div>
-      <div>
+      </Card>
+      <div className={styles.introtext}>
         <div>Hello</div>
         <div>Here's who I am AND what I do</div>
         <div>{renderButtonLinks()}</div>

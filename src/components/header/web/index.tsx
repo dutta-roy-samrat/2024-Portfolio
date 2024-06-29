@@ -1,19 +1,12 @@
 import Link from "next/link";
 
 import BulletPoint from "@components/ui/bullet-point";
-import { Nunito, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 
 import { CURRENT_DESIGNATION, PORTFOLIO_OWNER } from "@constants";
 import { HEADER_NAV_LINKS } from "@routes";
 
 import styles from "./main.module.scss";
-
-const nunito = Nunito({
-  subsets: ["latin"],
-  fallback: ["sans-serif"],
-  weight: "600",
-  style: "normal",
-});
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -38,14 +31,10 @@ const WebHeader = () => {
             {PORTFOLIO_OWNER}
           </h1>
           <div>&nbsp;/&nbsp;</div>
-          <h3 className={`${styles.designation} ${nunito.className}`}>
-            {CURRENT_DESIGNATION}
-          </h3>
+          <h3 className={styles.designation}>{CURRENT_DESIGNATION}</h3>
         </div>
       </BulletPoint>
-      <div className={`${styles.navLinkSection} ${nunito.className}`}>
-        {renderNavLinks()}
-      </div>
+      <div className={styles.navLinkSection}>{renderNavLinks()}</div>
     </div>
   );
 };
