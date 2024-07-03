@@ -1,12 +1,14 @@
+import SocialMediaLinks from "@components/social-media-links";
+import ExternalLink from "@components/ui/external-link";
+
 import { getMailRoute } from "@helpers/routes";
+
 import {
   EMAIL_DETAILS,
   PHONE_NUMBER_DETAILS,
   PORTFOLIO_OWNER,
   SOCIAL_MEDIA_DETAILS,
 } from "@constants";
-import SocialMediaLinks from "@components/social-media-links";
-import ExternalLink from "@ui/external-link";
 
 const Footer = () => (
   <div>
