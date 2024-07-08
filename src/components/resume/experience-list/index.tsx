@@ -1,14 +1,19 @@
 import { Fragment, ReactNode } from "react";
 
-import Card from "@components/ui/cards";
+import Card from "@components/ui/card";
 import ExternalLink from "@components/ui/external-link";
 
 import { EXPERIENCE_DETAILS } from "./constants";
+
+import resumeStyles from "../main.module.scss";
+import defaultStyles from "./main.module.scss";
 
 type AchievementProps = {
   title: string;
   description: string;
 };
+
+const styles = { ...defaultStyles, ...resumeStyles };
 
 const ExperienceList = () => {
   const renderAchievements = (achievements: AchievementProps[]): ReactNode =>
@@ -32,13 +37,15 @@ const ExperienceList = () => {
         achievements,
       }) => (
         <Card>
-          <div>{dateRange}</div>
-          <div>{designation}</div>
-          <div>
-            <div>{companyName}</div>(
-            <ExternalLink href={linkedInLink}>LinkedIn Link</ExternalLink>)
+          <div className={styles.dateRange}>{dateRange}</div>
+          <div className={styles.designation}>{designation}</div>
+
+          <div className={styles.companyName}>
+            {companyName}
+            <ExternalLink href={linkedInLink} />
           </div>
-          <div>{location}</div>
+
+          <div className={styles.location}>{location}</div>
           <details>
             <summary>More about the job</summary>
             <p>{jobDescription}</p>
@@ -55,7 +62,9 @@ const ExperienceList = () => {
               <ul>
                 {relevantWebsiteLinks.map((link) => (
                   <li key={link}>
-                    <ExternalLink href={link}>{link}</ExternalLink>
+                    <ExternalLink href={link} styles={styles}>
+                      {link}
+                    </ExternalLink>
                   </li>
                 ))}
               </ul>

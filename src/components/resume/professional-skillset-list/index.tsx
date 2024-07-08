@@ -1,12 +1,16 @@
-import Card from "@components/ui/cards";
+import Card from "@components/ui/card";
 
 import { PROFESSIONAL_SKILLS } from "./constants";
+import BulletPoint from "@components/ui/bullet-point";
+import styles from "../main.module.scss";
 
 const ProfessionalSkillSetList = () => (
   <Card>
-    <ul>
+    <ul className={styles.noDefaultBulletList}>
       {PROFESSIONAL_SKILLS.map((skill) => (
-        <li key={skill}>{skill}</li>
+        <li key={skill}>
+          <BulletPoint styles={styles}>{skill}</BulletPoint>
+        </li>
       ))}
     </ul>
   </Card>

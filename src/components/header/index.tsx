@@ -5,6 +5,7 @@ import ResponsiveHeader from "./responsive";
 
 const Header = () => {
   const { isDesktop } = useCurrentDeviceContext();
+  console.log(isDesktop);
   return isDesktop ? <WebHeader /> : <ResponsiveHeader />;
 };
 

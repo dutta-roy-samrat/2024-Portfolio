@@ -1,0 +1,20 @@
+@use "@components/ui/external-link/main.module.scss";
+
+.companyName {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.designation {
+  text-transform: uppercase;
+  margin-bottom: 17px;
+}
+
+.location {
+  margin-bottom: 17px;
+}
+
+.linkStyle {
+  justify-content: flex-start;
+}

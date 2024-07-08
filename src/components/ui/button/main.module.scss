@@ -1,0 +1,18 @@
+.btnStyle {
+  border-radius: 63px;
+  background-color: #0050ff;
+  font-family: var(--font-nunito);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 5px 20px;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  border: 1px solid #0050ff;
+  cursor: pointer;
+  &:hover {
+    color: #0050ff;
+    background-color: white;
+  }
+}

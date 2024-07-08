@@ -1,12 +1,17 @@
-import Card from "@components/ui/cards";
+import Card from "@components/ui/card";
+import BulletPoint from "@components/ui/bullet-point";
 
 import { LANGUAGE_FLUENCY_LIST } from "./constants";
 
+import styles from "../main.module.scss";
+
 const LanguageProficiencyList = () => (
   <Card>
-    <ul>
+    <ul className={styles.noDefaultBulletList}>
       {LANGUAGE_FLUENCY_LIST.map((lang) => (
-        <li key={lang}>{lang}</li>
+        <li key={lang}>
+          <BulletPoint styles={styles}>{lang}</BulletPoint>
+        </li>
       ))}
     </ul>
   </Card>

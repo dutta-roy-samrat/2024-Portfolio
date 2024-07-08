@@ -10,7 +10,6 @@ export const getDeviceType = ({
 }) => {
   if (typeof window === "undefined") return null;
   const width = window.innerWidth;
-  console.log(breakPoints, "kkl2", DEFAULT_BREAKPOINTS);
   const { md = DEFAULT_BREAKPOINTS.md, lg = DEFAULT_BREAKPOINTS.lg } =
     breakPoints;
 

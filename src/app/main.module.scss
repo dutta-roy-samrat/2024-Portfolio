@@ -1,5 +1,94 @@
+@use "@components/ui/card/main.module.scss";
+
 .homePage {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 160px 152px;
+  background-image: linear-gradient(to right, #e6dace 446px, #fff 0);
+}
+
+.cardStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4ece6;
+  width: 353px;
+  height: 526px;
+  padding: 0;
+}
+
+.profileImg {
+  height: 205px;
+  width: 205px;
+  margin: auto;
+}
+
+.porfolioOwner {
+  font-size: 25px;
+  font-family: var(--font-poppins);
+  max-width: 170px;
+  text-align: center;
+  margin: auto;
+}
+
+.introHolder {
+  font-family: var(--font-nunito);
+  width: 800px;
+  margin-left: 62px;
+}
+
+.designation {
+  font-family: var(--font-nunito);
+  text-transform: uppercase;
+  margin: auto;
+  font-weight: 400;
+}
+
+.socialMediaLinks {
+  text-align: center;
+  width: 353px;
+  padding: 25px 0;
+  background-color: white;
+}
+
+.divider {
+  width: 80px;
+}
+
+.greetings {
+  font-family: var(--font-poppins);
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.introTitle {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.btnGrp {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  .resumeBtn {
+    margin-right: 15px;
+  }
+  .personalProjectsButton {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+.introPart1,
+.introPart2 {
+  line-height: 26px;
+  font-size: 17px;
+  font-weight: 300;
 }

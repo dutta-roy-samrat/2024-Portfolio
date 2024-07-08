@@ -31,7 +31,7 @@ const WebHeader = () => {
     ));
 
   return (
-    <div className={styles.headerStyle}>
+    <header className={styles.headerStyle}>
       <BulletPoint>
         <div className={styles.headerLeftSection}>
           <h1 className={`${styles.portfolioOwnerName} ${poppins.className}`}>
@@ -43,10 +43,10 @@ const WebHeader = () => {
           </h3>
         </div>
       </BulletPoint>
-      <div className={`${styles.navLinkSection} ${nunito.className}`}>
+      <nav className={`${styles.navLinkSection} ${nunito.className}`}>
         {renderNavLinks()}
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 };
 

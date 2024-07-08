@@ -1,0 +1,35 @@
+@use "@components/ui/card/main.module.scss";
+
+.resumePage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: var(--font-nunito);
+  padding: 80px 0;
+  background-color: #e6dace;
+}
+
+.experienceSectionTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.sectionHeader {
+  font-size: 25px;
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.experienceSectionTitle {
+  .sectionHeader {
+    margin-bottom: 0;
+  }
+}
+
+.section {
+  margin-bottom: 50px;
+}

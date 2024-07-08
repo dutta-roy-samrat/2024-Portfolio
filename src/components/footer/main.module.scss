@@ -1,0 +1,31 @@
+.footerStyle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 50px;
+  font-family: var(--font-nunito);
+  font-size: 14px;
+}
+
+.footerContactListing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+
+.phoneNum,
+.email,
+.socialMediaLinks {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.phoneNumLabel,
+.emailLabel,
+.socialMediaLinksLabel {
+  font-size: 15px;
+  font-weight: 700;
+}
