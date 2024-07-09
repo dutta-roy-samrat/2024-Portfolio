@@ -4,8 +4,8 @@ import WebHeader from "./web";
 import ResponsiveHeader from "./responsive";
 
 const Header = () => {
-  const { isDesktop } = useCurrentDeviceContext();
-  console.log(isDesktop);
+  const { isDesktop, isDetecting } = useCurrentDeviceContext();
+  if (isDetecting) return;
   return isDesktop ? <WebHeader /> : <ResponsiveHeader />;
 };
 

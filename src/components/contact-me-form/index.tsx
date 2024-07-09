@@ -4,11 +4,14 @@ import { ChangeEventHandler, MouseEventHandler, useState } from "react";
 
 import Button from "@components/ui/button";
 import TextField from "@components/ui/text-field";
+import Card from "@components/ui/card";
 
 import { isValidEmail } from "@helpers/routes";
 import { getFormFieldsInOrder } from "./helpers";
 
 import { DEFAULT_CONTACT_FORM_VALUES } from "./constants";
+
+import styles from "./main.module.scss";
 
 const ContactMeForm = () => {
   const [formValues, setFormValues] = useState(DEFAULT_CONTACT_FORM_VALUES);
@@ -69,16 +72,21 @@ const ContactMeForm = () => {
   };
 
   return (
-    <div>
-      <div>
-        <TextField {...firstName} onChange={handleFieldChange} />
-        <TextField {...lastName} onChange={handleFieldChange} />
+    <Card>
+      <div className={styles.inputGroup}>
+        <TextField
+          {...firstName}
+          onChange={handleFieldChange}
+          containerClass={styles.containerClass}
+        />
+        <TextField {...lastName} onChange={handleFieldChange} containerClass={styles.containerClass}/>
       </div>
+
       <TextField {...email} onChange={handleFieldChange} />
       <TextField {...subject} onChange={handleFieldChange} />
       <TextField {...message} onChange={handleFieldChange} />
       <Button onClick={validateAndSubmit}>Send</Button>
-    </div>
+    </Card>
   );
 };
 

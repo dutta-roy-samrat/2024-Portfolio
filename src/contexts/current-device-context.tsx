@@ -16,12 +16,14 @@ interface CurrentDeviceContextType {
   isMobile: boolean;
   isDesktop: boolean;
   isTablet: boolean;
+  isDetecting: boolean;
 }
 
 const defaultContextValue: CurrentDeviceContextType = {
   isMobile: false,
   isDesktop: false,
   isTablet: false,
+  isDetecting: true,
 };
 
 const CurrentDeviceContext =
@@ -37,20 +39,20 @@ const CurrentDeviceContextProvider: FC<{
     md?: number;
   };
 }> = ({ children, breakPoints }) => {
-  const [currentDevice, setCurrentDevice] = useState<CurrentDeviceContextType>({
-    ...defaultContextValue,
-    ...getDeviceType({ breakPoints }),
-  });
-  console.log(breakPoints, "kkl1");
+  const [currentDevice, setCurrentDevice] =
+    useState<CurrentDeviceContextType>(defaultContextValue);
+
   useEffect(() => {
     const resizeEventHandler = debounce(
       () =>
         setCurrentDevice({
           ...defaultContextValue,
           ...getDeviceType({ breakPoints }),
+          isDetecting: false,
         }),
       200
     );
+    resizeEventHandler();
     addEventListener("resize", resizeEventHandler);
     return () => removeEventListener("resize", resizeEventHandler);
   }, []);

@@ -1,10 +1,16 @@
 import ContactMeForm from "@components/contact-me-form";
 import BulletPoint from "@components/ui/bullet-point";
 
+import { poppins } from "@assets/fonts";
+
+import styles from "./main.module.scss";
+
 const ContactMePage = () => {
   return (
-    <div>
-      <BulletPoint>Lets' Talk</BulletPoint>
+    <div className={styles.contactMePage}>
+      <h1 className={poppins.className}>
+        <BulletPoint>Lets' Talk</BulletPoint>
+      </h1>
       <ContactMeForm />
     </div>
   );
