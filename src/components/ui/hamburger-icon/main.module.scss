@@ -1,0 +1,16 @@
+.hamburgerContainer {
+  z-index: 3;
+}
+
+.firstLine,
+.secondLine,
+.thirdLine {
+  width: 25px;
+  height: 4px;
+  background-color: blue;
+}
+
+.firstLine,
+.secondLine {
+  margin-bottom: 4px;
+}

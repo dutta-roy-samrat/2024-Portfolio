@@ -4,8 +4,8 @@ import Header from "@components/header";
 import Footer from "@components/footer";
 import CurrentDeviceContextProvider from "@contexts/current-device-context";
 
-import styles from "./global.module.scss";
 import { nunito } from "@assets/fonts";
+import styles from "./global.module.scss";
 
 export const metadata: Metadata = {
   title: "Samrat's Portfolio",
@@ -19,12 +19,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${nunito.variable} ${styles.bodyClass}`}>
+    <html lang="en" className={nunito.variable}>
+      <body className={styles.bodyClass}>
         <CurrentDeviceContextProvider>
           <Header />
           {children}
           <Footer />
+          <div id="modal" className={styles.modalContainer}></div>
         </CurrentDeviceContextProvider>
       </body>
     </html>

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,8 +14,10 @@ import { poppins } from "@assets/fonts";
 import ProfileImg from "@assets/images/profile-img.png";
 
 import styles from "./main.module.scss";
+import { useCurrentDeviceContext } from "@contexts/current-device-context";
 
 const HomePage = () => {
+  const { isDesktop } = useCurrentDeviceContext();
   const renderButtonLinks = () => (
     <div className={styles.btnGrp}>
       <Link href={RESUME_LINK_DETAILS.route}>
@@ -37,15 +41,18 @@ const HomePage = () => {
         />
         <div className={styles.porfolioOwner}>{PORTFOLIO_OWNER}</div>
         <hr className={styles.divider} />
-        <div className={styles.designation}>{CURRENT_DESIGNATION}</div>
+        {!isDesktop && renderButtonLinks()}
+        {isDesktop && (
+          <div className={styles.designation}>{CURRENT_DESIGNATION}</div>
+        )}
         <div className={styles.socialMediaLinks}>
           <SocialMediaLinks />
         </div>
       </Card>
       <section className={styles.introHolder}>
         <div className={styles.greetings}>Hello</div>
-        <div className={styles.introTitle}>Here's who I am AND what I do</div>
-        {renderButtonLinks()}
+        <h1 className={styles.introTitle}>Here's who I am AND what I do</h1>
+        {isDesktop && renderButtonLinks()}
         <p className={styles.introPart1}>
           I am a dedicated web development enthusiast actively honing my
           frontend skills. I specialize in React, JavaScript, Next.js, and

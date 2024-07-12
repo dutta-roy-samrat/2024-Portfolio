@@ -8,6 +8,15 @@
   outline: none;
   border: none;
   border-bottom: 1px solid black;
+  &:focus-visible {
+    border-bottom: 2px solid black;
+  }
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+  }
 }
 
 .labelClass {
