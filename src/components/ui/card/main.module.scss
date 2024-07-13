@@ -1,0 +1,9 @@
+.cardStyle {
+  box-shadow: rgb(138, 131, 124) -8px 8px 16px 0px;
+  background-color: white;
+  padding: 40px 20px;
+  @media (min-width: 1080px) {
+    width: 690px;
+    padding: 80px 30px;
+  }
+}

@@ -10,18 +10,18 @@ import {
   SOCIAL_MEDIA_DETAILS,
 } from "@constants";
 
+import styles from "./main.module.scss";
+
 const Footer = () => (
-  <div>
+  <footer className={styles.footerStyle}>
     <div>&copy; 2024 by {PORTFOLIO_OWNER}</div>
-    <div>
-      <div>
-        <div>
-          <div>{PHONE_NUMBER_DETAILS.label}</div>
-          <div>{PHONE_NUMBER_DETAILS.value}</div>
-        </div>
+    <div className={styles.footerContactListing}>
+      <div className={styles.phoneNum}>
+        <div className={styles.phoneNumLabel}>{PHONE_NUMBER_DETAILS.label}</div>
+        <div>{PHONE_NUMBER_DETAILS.value}</div>
       </div>
-      <div>
-        <div>{EMAIL_DETAILS.label}</div>
+      <div className={styles.email}>
+        <div className={styles.emailLabel}>{EMAIL_DETAILS.label}</div>
         <ExternalLink
           href={getMailRoute(EMAIL_DETAILS.value)}
           showExternalLinkIcon={false}
@@ -29,14 +29,14 @@ const Footer = () => (
           {EMAIL_DETAILS.value}
         </ExternalLink>
       </div>
-      <div>
-        <div>{SOCIAL_MEDIA_DETAILS.label}</div>
+      <div className={styles.socialMediaLinks}>
+        <div className={styles.socialMediaLinksLabel}>{SOCIAL_MEDIA_DETAILS.label}</div>
         <div>
           <SocialMediaLinks />
         </div>
       </div>
     </div>
-  </div>
+  </footer>
 );
 
 export default Footer;

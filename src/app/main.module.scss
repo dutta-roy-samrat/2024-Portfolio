@@ -1,0 +1,121 @@
+@use "@components/ui/card/main.module.scss";
+
+.homePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 22px 20px;
+  background-image: linear-gradient(to bottom, white 300px, #e6dace 0);
+  @media (min-width: 1080px) {
+    flex-direction: row;
+    padding: 160px 152px;
+    background-image: linear-gradient(to right, #e6dace 446px, #fff 0);
+  }
+}
+
+.cardStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4ece6;
+  width: 353px;
+  height: 526px;
+  padding: 0;
+}
+
+.profileImg {
+  height: 205px;
+  width: 205px;
+  margin: auto;
+}
+
+.porfolioOwner {
+  font-size: 25px;
+  font-family: var(--font-poppins);
+  max-width: 170px;
+  text-align: center;
+  margin: auto;
+}
+
+.introHolder {
+  @media (min-width: 1080px) {
+    width: 800px;
+    margin-left: 62px;
+  }
+}
+
+.designation {
+  text-transform: uppercase;
+  margin: auto;
+  font-weight: 400;
+}
+
+.socialMediaLinks {
+  text-align: center;
+  width: 353px;
+  padding: 25px 0;
+  background-color: white;
+}
+
+.divider {
+  width: 80px;
+}
+
+.greetings {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 40px;
+  margin-top: 40px;
+  @media (min-width: 1080px) {
+    font-size: 100px;
+    margin-top: 0;
+  }
+}
+
+.introTitle {
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 19px;
+  @media (min-width: 1080px) {
+    font-size: 25px;
+  }
+}
+
+.btnGrp {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 20px;
+  .resumeBtn {
+    margin-bottom: 10px;
+  }
+  .personalProjectsButton {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+  @media (min-width: 1080px) {
+    flex-direction: row;
+    margin-bottom: 30px;
+    justify-content: unset;
+    .resumeBtn {
+      margin-right: 15px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.introPart1,
+.introPart2 {
+  line-height: 26px;
+  font-size: 17px;
+  font-weight: 300;
+}

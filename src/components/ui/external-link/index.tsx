@@ -28,7 +28,13 @@ const ExternalLink: FC<ExternalLinkProps> = ({
   >
     <div className={styles.linkText}> {children}</div>
     {showExternalLinkIcon && (
-      <Image src={ExternalLinkIcon} alt={href} className={styles.linkIcon} />
+      <Image
+        src={ExternalLinkIcon}
+        alt={href}
+        className={styles.linkIcon}
+        width={14}
+        height={16}
+      />
     )}
   </a>
 );

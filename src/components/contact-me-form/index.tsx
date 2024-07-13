@@ -4,14 +4,20 @@ import { ChangeEventHandler, MouseEventHandler, useState } from "react";
 
 import Button from "@components/ui/button";
 import TextField from "@components/ui/text-field";
+import Card from "@components/ui/card";
 
 import { isValidEmail } from "@helpers/routes";
 import { getFormFieldsInOrder } from "./helpers";
 
 import { DEFAULT_CONTACT_FORM_VALUES } from "./constants";
 
+import styles from "./main.module.scss";
+
+const defaultObj = {};
+
 const ContactMeForm = () => {
   const [formValues, setFormValues] = useState(DEFAULT_CONTACT_FORM_VALUES);
+  const [formErrors, setFormErrors] = useState(defaultObj);
 
   const { firstName, lastName, email, subject, message } = formValues;
 
@@ -24,55 +30,64 @@ const ContactMeForm = () => {
     }));
   };
 
-  const handleFieldError = ({ name, errorMsg }: { name: string; errorMsg: string }) => {
-    setFormValues((prevFormValues) => ({
-      ...prevFormValues,
-      [name]: { ...prevFormValues[name], errorMsg },
-    }));
-  };
-
-  const validateAndSubmit: MouseEventHandler<HTMLButtonElement> = (e) => {
-    e.preventDefault();
-    const errorFields = getFormFieldsInOrder(formValues).filter((field) => {
-      const { required, emailValidation, value, name, labelText } = field;
-      if (required && !value.trim()) {
-        handleFieldError({
-          name,
-          errorMsg: `${labelText} is required.`,
-        });
-        return true;
+  const validateAndSubmit = () => {
+    const errors = {};
+    let firstErrorLabelId;
+    getFormFieldsInOrder(formValues).forEach(
+      ({ value, required, name, labelText, id }) => {
+        if (value) return;
+        if (!Object.keys(errors).length) {
+          firstErrorLabelId = `${id}-label`;
+        }
+        if (required) errors[name] = `${labelText} is required`;
+        if (name === "email" && isValidEmail(email))
+          errors[name] = `Enter a valid email`;
       }
-      if (emailValidation && !isValidEmail(value)) {
-        handleFieldError({
-          name,
-          errorMsg: `${labelText} is not valid.`,
-        });
-        return true;
-      }
-    });
-    if (errorFields[0]) {
-      const firstErrorFieldLabelElement = document.getElementById(
-        `${errorFields[0].id}-label`
-      );
-      return firstErrorFieldLabelElement?.scrollIntoView({
+    );
+    if (Object.keys(errors).length) {
+      window.scroll({
+        top: document.querySelector(`#email-label`)?.getBoundingClientRect()
+          ?.top,
         behavior: "smooth",
-        block: "start",
       });
+      return setFormErrors(errors);
     }
-    //add email using sendemail
   };
 
   return (
-    <div>
-      <div>
-        <TextField {...firstName} onChange={handleFieldChange} />
-        <TextField {...lastName} onChange={handleFieldChange} />
+    <Card>
+      <div className={styles.inputGroup}>
+        <TextField
+          {...firstName}
+          onChange={handleFieldChange}
+          containerClass={styles.containerClass}
+          errorMsg={formErrors?.firstName}
+        />
+        <TextField
+          {...lastName}
+          onChange={handleFieldChange}
+          containerClass={styles.containerClass}
+          errorMsg={formErrors?.lastName}
+        />
       </div>
-      <TextField {...email} onChange={handleFieldChange} />
-      <TextField {...subject} onChange={handleFieldChange} />
-      <TextField {...message} onChange={handleFieldChange} />
+
+      <TextField
+        {...email}
+        onChange={handleFieldChange}
+        errorMsg={formErrors?.email}
+      />
+      <TextField
+        {...subject}
+        onChange={handleFieldChange}
+        errorMsg={formErrors?.subject}
+      />
+      <TextField
+        {...message}
+        onChange={handleFieldChange}
+        errorMsg={formErrors?.message}
+      />
       <Button onClick={validateAndSubmit}>Send</Button>
-    </div>
+    </Card>
   );
 };
 

@@ -1,0 +1,49 @@
+@use "@components/ui/card/main.module.scss";
+
+.resumePage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #e6dace;
+  padding: 60px 22px;
+  @media (min-width: 1080px) {
+    padding: 80px 0;
+  }
+}
+
+.pageHeader {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  @media (max-width: 1079px) {
+    font-size: 29px;
+  }
+}
+
+.experienceSectionTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.sectionHeader {
+  font-size: 25px;
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.experienceSectionTitle {
+  .sectionHeader {
+    margin-bottom: 0;
+  }
+}
+
+.section {
+  width: 100%;
+  margin-bottom: 50px;
+  @media (min-width: 1080px) {
+    width: auto;
+  }
+}

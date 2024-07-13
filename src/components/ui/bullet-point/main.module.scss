@@ -1,0 +1,13 @@
+.bulletPoint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bullet {
+  background-color: #0050ff;
+  display: inline-block;
+  height: 16px;
+  margin-right: 11px;
+  width: 16px;
+}
