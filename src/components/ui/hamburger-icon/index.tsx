@@ -4,9 +4,12 @@ const HamburgerButton = ({
   className = "",
   onClick,
   styles = defaultStyles,
+  isOpen = false,
 }) => (
   <button
-    className={`${styles.hamburgerContainer} ${className}`}
+    className={`${styles.hamburgerContainer} ${className} ${
+      isOpen ? styles.openHamburgerContainer : ""
+    }`}
     onClick={onClick}
   >
     <div className={styles.firstLine}></div>

@@ -15,7 +15,7 @@ const PersonalProjectList = () =>
         <div className={styles.role}>{role}</div>
         <p>{description}</p>
       </div>
-      <ExternalLink href={link} showExternalLinkIcon={false}>
+      <ExternalLink href={link} showExternalLinkIcon={false} styles={styles}>
         <Image src={src} alt={title} className={styles.projectImg} />
       </ExternalLink>
     </Card>

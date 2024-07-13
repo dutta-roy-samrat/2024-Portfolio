@@ -37,4 +37,15 @@
   text-transform: uppercase;
   margin-right: 15px;
   font-size: 14px;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:active,
+  &:visited {
+    color: black;
+  }
+}
+
+.activeLink {
+  color: #0050ff !important;
 }

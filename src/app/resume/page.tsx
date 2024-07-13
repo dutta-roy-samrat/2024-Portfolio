@@ -14,7 +14,7 @@ import styles from "./main.module.scss";
 
 const ResumePage = () => (
   <div className={`${styles.resumePage} ${poppins.variable}`}>
-    <h1 className={poppins.className}>
+    <h1 className={styles.pageHeader}>
       <BulletPoint>{RESUME_LINK_DETAILS.text}</BulletPoint>
     </h1>
     <div className={styles.section}>

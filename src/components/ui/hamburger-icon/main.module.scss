@@ -1,5 +1,11 @@
 .hamburgerContainer {
-  z-index: 3;
+  z-index: 1;
+  background: none;
+  border: none;
+  height: 30px;
+  width: 30px;
+  padding: 0;
+  position: relative;
 }
 
 .firstLine,
@@ -13,4 +19,47 @@
 .firstLine,
 .secondLine {
   margin-bottom: 4px;
+}
+
+.firstLine,
+.thirdLine {
+  width: 15px;
+}
+
+.secondLine {
+  width: 30px;
+}
+
+.thirdLine {
+  margin-left: 15px;
+}
+
+.openHamburgerContainer {
+  .firstLine,
+  .thirdLine {
+    position: absolute;
+    margin: 0;
+  }
+
+  .firstLine {
+    top: 0;
+    transform-origin: bottom left;
+    transform: rotateZ(45deg);
+    translate: 3px 2px;
+  }
+
+  .thirdLine {
+    bottom: 0;
+    right: 0;
+    transform-origin: top right;
+    transform: rotateZ(45deg);
+    margin-right: auto;
+    translate: -3px -2px;
+  }
+
+  .secondLine {
+    margin: 0;
+    transform-origin: center;
+    transform: rotateZ(-45deg);
+  }
 }

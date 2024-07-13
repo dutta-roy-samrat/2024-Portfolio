@@ -1,17 +1,18 @@
-import { poppins } from "@assets/fonts";
+import { useEffect, useState } from "react";
+
 import BulletPoint from "@components/ui/bullet-point";
+import HamburgerButton from "@components/ui/hamburger-icon";
+import NavDropdown from "./nav-dropdown";
+
 import { CURRENT_DESIGNATION, PORTFOLIO_OWNER } from "@constants";
 
+import { poppins } from "@assets/fonts";
+
 import styles from "./main.module.scss";
-import HamburgerButton from "@components/ui/hamburger-icon";
-import { useState } from "react";
-import { createPortal } from "react-dom";
-import NavDropdown from "./nav-dropdown";
 
 const ResponsiveHeader = () => {
   const [showDropdown, setShowDropdown] = useState(false);
-  // const [pageYCoordWhenDropdownClosed, setPageYCoordWhenDropdownClosed] =
-  //   useState(0);
+
   return (
     <header className={styles.headerStyle}>
       <div className={styles.headerLeftSection}>
@@ -23,23 +24,12 @@ const ResponsiveHeader = () => {
         <div className={styles.designation}>{CURRENT_DESIGNATION}</div>
       </div>
       <HamburgerButton
-        onClick={() => {
-          // if (showDropdown) {
-          //   window?.scrollBy(pageYCoordWhenDropdownClosed);
-          // }
-          setShowDropdown((prevDropdownVisibility) => !prevDropdownVisibility);
-          // setPageYCoordWhenDropdownClosed(window?.scrollY);
-        }}
+        onClick={() =>
+          setShowDropdown((prevDropdownVisibility) => !prevDropdownVisibility)
+        }
+        isOpen={showDropdown}
       />
-      {createPortal(
-        showDropdown && (
-          <NavDropdown
-            setShowDropdown={setShowDropdown}
-            // pageYCoordWhenDropdownClosed={pageYCoordWhenDropdownClosed}
-          />
-        ),
-        document.querySelector("#modal")
-      )}
+      {showDropdown && <NavDropdown setShowDropdown={setShowDropdown} />}
     </header>
   );
 };

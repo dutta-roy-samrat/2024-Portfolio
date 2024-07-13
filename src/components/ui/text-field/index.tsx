@@ -26,7 +26,7 @@ const TextField: FC<TextFieldProps> = ({
   containerClass = "",
   ...restProps
 }) => (
-  <div className={`${styles.inputContainer} ${containerClass}`}>
+  <div className={`${styles.textInputContainer} ${containerClass}`}>
     <label htmlFor={id} className={styles.labelClass} id={`${id}-label`}>
       {labelText}
       {required && <div>*</div>}
@@ -35,7 +35,7 @@ const TextField: FC<TextFieldProps> = ({
       id={id}
       type="text"
       name={name}
-      className={styles.inputClass}
+      className={styles.textInputClass}
       value={value}
       required={required}
       {...restProps}

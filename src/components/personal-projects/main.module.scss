@@ -1,4 +1,5 @@
 @use "@components/ui/card/main.module.scss";
+@use "@components/ui/external-link/main.module.scss" as *;
 
 .projectImg {
   width: 100%;
@@ -24,4 +25,8 @@
 .role {
   font-size: 14px;
   font-weight: 700;
+}
+
+.linkText {
+  width: 100%;
 }
