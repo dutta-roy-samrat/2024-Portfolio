@@ -19,9 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={nunito.variable}>
+    <html lang="en" className={`${styles.htmlClass} ${nunito.variable}`}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       </head>
       <body className={styles.bodyClass}>
         <CurrentDeviceContextProvider>

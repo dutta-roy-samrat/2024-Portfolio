@@ -1,8 +1,14 @@
 .inputGroup {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  @media (min-width: 1080px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .containerClass {
-  width: 46%;
+  @media (min-width: 1080px) {
+    width: 46%;
+  }
 }

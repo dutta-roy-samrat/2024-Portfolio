@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Dispatch, FC, SetStateAction, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -8,7 +8,15 @@ import { poppins } from "@assets/fonts";
 
 import styles from "./main.module.scss";
 
-const NavDropdown = ({ setShowDropdown }) => {
+type NavDropdownProps = {
+  setShowDropdown: Dispatch<SetStateAction<boolean>>;
+  showDropdown: boolean;
+};
+
+const NavDropdown: FC<NavDropdownProps> = ({
+  setShowDropdown,
+  showDropdown,
+}) => {
   const pathname = usePathname();
   const renderNavLinks = () =>
     HEADER_NAV_LINKS.map(({ route, text }) => {
@@ -32,11 +40,21 @@ const NavDropdown = ({ setShowDropdown }) => {
     });
 
   useEffect(() => {
-    document.body?.classList.add(styles.noScroll);
-    return () => document.body.classList.remove(styles.noScroll);
-  }, []);
+    if (showDropdown) {
+      document.body?.classList.add(styles.noScroll);
+      return () => document.body.classList.remove(styles.noScroll);
+    }
+  }, [showDropdown]);
 
-  return <nav className={styles.navDropdown}>{renderNavLinks()}</nav>;
+  return (
+    <nav
+      className={`${styles.navDropdown} ${
+        showDropdown ? styles.navAppear : styles.navDisappear
+      }`}
+    >
+      {renderNavLinks()}
+    </nav>
+  );
 };
 
 export default NavDropdown;

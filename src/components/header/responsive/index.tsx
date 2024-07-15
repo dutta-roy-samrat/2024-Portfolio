@@ -12,7 +12,8 @@ import styles from "./main.module.scss";
 
 const ResponsiveHeader = () => {
   const [showDropdown, setShowDropdown] = useState(false);
-
+  const [isDropdownFirstTimeOpened, setIsDropdownFirstTimeOpened] =
+    useState(false);
   return (
     <header className={styles.headerStyle}>
       <div className={styles.headerLeftSection}>
@@ -24,12 +25,18 @@ const ResponsiveHeader = () => {
         <div className={styles.designation}>{CURRENT_DESIGNATION}</div>
       </div>
       <HamburgerButton
-        onClick={() =>
-          setShowDropdown((prevDropdownVisibility) => !prevDropdownVisibility)
-        }
+        onClick={() => {
+          setShowDropdown((prevDropdownVisibility) => !prevDropdownVisibility);
+          setIsDropdownFirstTimeOpened(true);
+        }}
         isOpen={showDropdown}
       />
-      {showDropdown && <NavDropdown setShowDropdown={setShowDropdown} />}
+      {isDropdownFirstTimeOpened && (
+        <NavDropdown
+          setShowDropdown={setShowDropdown}
+          showDropdown={showDropdown}
+        />
+      )}
     </header>
   );
 };

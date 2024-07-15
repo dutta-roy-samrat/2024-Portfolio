@@ -13,7 +13,7 @@ import { DEFAULT_CONTACT_FORM_VALUES } from "./constants";
 
 import styles from "./main.module.scss";
 
-const defaultObj = {};
+const defaultObj: DefaultObjType = {};
 
 const ContactMeForm = () => {
   const [formValues, setFormValues] = useState(DEFAULT_CONTACT_FORM_VALUES);
@@ -31,7 +31,7 @@ const ContactMeForm = () => {
   };
 
   const validateAndSubmit = () => {
-    const errors = {};
+    const errors: DefaultObjType = {};
     let firstErrorLabelId;
     getFormFieldsInOrder(formValues).forEach(
       ({ value, required, name, labelText, id }) => {
@@ -60,13 +60,13 @@ const ContactMeForm = () => {
         <TextField
           {...firstName}
           onChange={handleFieldChange}
-          containerClass={styles.containerClass}
+          // containerClass={styles.containerClass}
           errorMsg={formErrors?.firstName}
         />
         <TextField
           {...lastName}
           onChange={handleFieldChange}
-          containerClass={styles.containerClass}
+          // containerClass={styles.containerClass}
           errorMsg={formErrors?.lastName}
         />
       </div>

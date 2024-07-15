@@ -1,3 +1,25 @@
+@keyframes animatedNavAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(-200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animatedDisappear {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-200%);
+  }
+}
+
 .headerStyle {
   display: flex;
   justify-content: space-between;
@@ -32,10 +54,19 @@
   align-items: center;
   width: 100%;
   height: 100vh;
-  top: 0;
-  left:0;
   position: absolute;
+  top: 0;
+  left: 0;
   background-color: #f4ece6;
+  transform: translateY(-200%);
+  opacity: 0;
+}
+
+.navDisappear {
+  animation: animatedDisappear 1s forwards;
+}
+.navAppear {
+  animation: animatedNavAppear 1s forwards;
 }
 
 .noScroll {
@@ -47,12 +78,9 @@
   margin: 20px 0;
   font-size: 20px;
   text-transform: uppercase;
+  color: black;
   &:hover {
     text-decoration: underline;
-  }
-  &:active,
-  &:visited {
-    color: black;
   }
 }
 

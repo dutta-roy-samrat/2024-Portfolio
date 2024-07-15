@@ -51,7 +51,9 @@ const HomePage = () => {
       </Card>
       <section className={styles.introHolder}>
         <div className={styles.greetings}>Hello</div>
-        <h1 className={styles.introTitle}>Here's who I am AND what I do</h1>
+        <h1 className={styles.introTitle}>
+          Here&apos;s who I am AND what I do
+        </h1>
         {isDesktop && renderButtonLinks()}
         <p className={styles.introPart1}>
           I am a dedicated web development enthusiast actively honing my
@@ -60,9 +62,9 @@ const HomePage = () => {
           my knowledge and expertise.
         </p>
         <p className={styles.introPart2}>
-          Originally a Mechanical Engineer, I've transitioned into a passionate
-          front-end web developer, dedicated to crafting efficient and engaging
-          user interfaces.
+          Originally a Mechanical Engineer, I&apos;ve transitioned into a
+          passionate front-end web developer, dedicated to crafting efficient
+          and engaging user interfaces.
         </p>
       </section>
     </article>

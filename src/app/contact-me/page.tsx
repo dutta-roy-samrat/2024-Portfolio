@@ -9,7 +9,7 @@ const ContactMePage = () => {
   return (
     <div className={styles.contactMePage}>
       <h1 className={poppins.className}>
-        <BulletPoint>Let's Talk</BulletPoint>
+        <BulletPoint>Let&apos;s Talk</BulletPoint>
       </h1>
       <ContactMeForm />
     </div>

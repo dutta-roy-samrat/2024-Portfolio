@@ -14,16 +14,19 @@
   width: 25px;
   height: 4px;
   background-color: blue;
-}
-
-.firstLine,
-.secondLine {
-  margin-bottom: 4px;
+  transition: transform 1.2s, margin 1.2s, position 1.2s, transform-orgin 1.2s;
 }
 
 .firstLine,
 .thirdLine {
+  position: absolute;
   width: 15px;
+}
+
+.firstLine {
+  top: 0;
+  left: 0;
+  transform-origin: bottom left;
 }
 
 .secondLine {
@@ -31,34 +34,32 @@
 }
 
 .thirdLine {
+  bottom: 0;
+  right: 0;
+  transform-origin: top right;
   margin-left: 15px;
 }
 
 .openHamburgerContainer {
+  z-index: 1;
   .firstLine,
   .thirdLine {
-    position: absolute;
-    margin: 0;
+    background-color: black;
   }
 
   .firstLine {
-    top: 0;
-    transform-origin: bottom left;
     transform: rotateZ(45deg);
     translate: 3px 2px;
   }
 
   .thirdLine {
-    bottom: 0;
-    right: 0;
-    transform-origin: top right;
     transform: rotateZ(45deg);
     margin-right: auto;
     translate: -3px -2px;
   }
 
   .secondLine {
-    margin: 0;
+    background-color: black;
     transform-origin: center;
     transform: rotateZ(-45deg);
   }

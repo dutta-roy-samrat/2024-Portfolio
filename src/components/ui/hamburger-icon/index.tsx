@@ -1,6 +1,15 @@
+import { FC } from "react";
+
 import defaultStyles from "./main.module.scss";
 
-const HamburgerButton = ({
+type HamburgerButtonProps = {
+  className?: string;
+  onClick: () => void;
+  styles?: ModularStyles;
+  isOpen: boolean;
+};
+
+const HamburgerButton: FC<HamburgerButtonProps> = ({
   className = "",
   onClick,
   styles = defaultStyles,
